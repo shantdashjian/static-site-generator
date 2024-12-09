@@ -10,4 +10,7 @@ class LeafNode(HTMLNode):
             raise ValueError()
         if self.tag == None:
             return self.value
-        return f'<{self.tag} {self.props_to_html()}>{self.value}</{self.tag}>'
+        props = ""
+        if self.props != None:
+            props = f" {self.props_to_html()}"
+        return f'<{self.tag}{props}>{self.value}</{self.tag}>'
