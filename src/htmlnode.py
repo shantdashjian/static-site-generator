@@ -15,4 +15,7 @@ class HTMLNode:
         return (" ").join(list(map(build, self.props.items())))
     
     def __repr__(self):
-        return f"HTMLNode({self.tag}, {self.value}, {self.children}, {self.props_to_html()})"
+        props = None
+        if self.props != None:
+            props = self.props_to_html()
+        return f"HTMLNode({self.tag}, {self.value}, {self.children}, {props})"
