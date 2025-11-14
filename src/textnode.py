@@ -1,10 +1,10 @@
 from enum import Enum
 
 class TextType(Enum):
-    PLAIN_TEXT = "plain text"
-    BOLD_TEXT = "bold text"
-    ITALIC_TEXT = "italic text"
-    CODE_TEXT = "code text"
+    TEXT = "plain text"
+    BOLD = "bold text"
+    ITALIC = "italic text"
+    CODE = "code text"
     LINK = "link"
     IMAGE = "image"
 
@@ -15,7 +15,7 @@ class TextNode:
         self.text_type = text_type
         self.url = url
     
-    def __ed__(self, other):
+    def __eq__(self, other):
         return self.text == other.text and self.text_type == other.text_type and self.url == other.url
 
     def __repr__(self):
