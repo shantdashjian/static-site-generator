@@ -49,8 +49,11 @@ def quote_block_to_html_node(block):
     lines = block.split("\n")
     text = []
     for line in lines:
-        matching_parts = re.match(r"^(>)(.*)$", line)
-        quote_text = matching_parts.group(2)
+        if re.match(r"^>$", line):
+            quote_text = "\n"
+        else:
+            matching_parts = re.match(r"^(>) (.*)$", line)
+            quote_text = matching_parts.group(2)
         text.append(quote_text)
     block = " ".join(text)
     block_children = text_to_children(block)

@@ -88,8 +88,8 @@ This is another paragraph with _italic_ text and `code` here
 
     def test_quote(self):
         md = """
->This is a quote
-"""
+> This is a quote
+        """
 
         node = markdown_to_html_node(md)
         html = node.to_html()
@@ -100,9 +100,9 @@ This is another paragraph with _italic_ text and `code` here
 
     def test_multi_line_quote(self):
         md = """
->This is a quote
->that is multi-line
-"""
+> This is a quote
+> that is multi-line
+        """
 
         node = markdown_to_html_node(md)
         html = node.to_html()
