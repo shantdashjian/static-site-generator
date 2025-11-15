@@ -11,7 +11,7 @@ class TextType(Enum):
 class TextNode:
 
     def __init__(self, text, text_type, url=None):
-        self.text = text
+        self.text = text.replace("\n", " ") if text_type != TextType.CODE else text
         self.text_type = text_type
         self.url = url
     
