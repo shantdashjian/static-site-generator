@@ -1,8 +1,7 @@
-from textnode import TextNode, TextType
+from copy_content import copy_content
 
 def main():
-    link_node = TextNode("My personal website", TextType.LINK, "https://shantdashjian.com")
-    print(link_node)
+    copy_content("static", "public")
 
 if __name__ == "__main__":
     main()
